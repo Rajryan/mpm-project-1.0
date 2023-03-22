@@ -1,6 +1,7 @@
 <?php
-namespace mpm\auth\urls;
-if(!defined('SECURE')) exit('<h1>Access Denied</h1>'); 
+
+if(!defined('SECURE')) exit('<h1>Access Denied</h1>');
+
 
 $urlpatterns = [
   path(

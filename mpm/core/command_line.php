@@ -3,8 +3,8 @@ if(php_sapi_name()!='cli') {
   exit("<h1>Access Denied </h1> ");
 }
 require_once 'config/settings.php';
-require_once 'mpm/core/sql_reader.php';
-require_once 'mpm/database_handler.php';
+require_once 'mpm/database/sql_reader.php';
+require_once 'mpm/database/database_handler.php';
 
 
 function execute_from_command_line($arguments)

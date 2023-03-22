@@ -5,7 +5,6 @@ define("SECURE",true);
  *  DON'T EDIT THIS 
 **/
 require_once 'config/autoload.php';
-use Mpm\Core\Request;
-use Mpm\Core\Router;
+use Mpm\Core\{Request,Router};
 
 Router::process(Request::captureUri(),$urlpatterns);

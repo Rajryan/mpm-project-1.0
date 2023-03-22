@@ -1,6 +1,6 @@
 <?php
 if(!defined('SECURE')) exit('<h1>Access Denied</h1>'); 
-require_once 'mpm/forms.php';
+require_once 'mpm/forms/forms.php';
 
 class UserChangeForm extends forms\Form {
   public $username,$fullname,$mobile_number;

@@ -2,6 +2,7 @@
 if(!defined('SECURE')) exit('<h1>Access Denied</h1>'); 
 require_once 'mpm/auth/forms.php';
 
+
 function login($server){
   $form = new UserLoginForm();
   if($server["REQUEST_METHOD"]=="POST") {

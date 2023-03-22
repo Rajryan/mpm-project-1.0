@@ -23,11 +23,11 @@ if(!defined('SECURE')) exit('<h1>Access Denied</h1>');
 
 define("FIELD_ID_PREFIX","id-");
 define("FIELD_LABEL_ID_PREFIX", "id-label-");
-define("FIELD_CLASS" , "class-form-control");
-define("FIELD_LABEL_CLASS","class-form-label");
-define("RADIOGROUP_CLASS","class-radio-group");
+define("FIELD_CLASS" , "form-control");
+define("FIELD_LABEL_CLASS","form-label");
+define("RADIOGROUP_CLASS","radio-group");
 define("RADIOGROUP_ID_PREFIX", "id-radio-group-");
-define("SELECTGROUP_CLASS","class-select-group");
+define("SELECTGROUP_CLASS","select-group");
 define("SELECTGROUP_ID_PREFIX", "id-select-group-");
 define("ERROR_PREFIX", "error-");
 
@@ -142,14 +142,14 @@ class TextField extends Field {
           $this->placeholder = $this->label;
     }
     if(!empty($this->label) && $this->showLabel) {
-      $labell = "<label class='class-form-label' id='$idArray[0]'>$this->label</label>";
+      $labell = "<label class='".FIELD_LABEL_CLASS."' id='$idArray[0]'>$this->label</label>";
     }
     $errors = "";
     foreach($this->error_list as $error){
       $errors.="<li>{$error}</li>";
     }
     
-    $textarea= "<textarea name='$this->name'  rows=\"$this->rows\" cols=\"$this->cols\" class='class-form-control' id=\"$idArray[1]\" style='width:100%' placeholder=\"$this->placeholder\">{$this->value}</textarea>
+    $textarea= "<textarea name='$this->name'  rows=\"$this->rows\" cols=\"$this->cols\" class='".FIELD_CLASS."' id=\"$idArray[1]\" style='width:100%' placeholder=\"$this->placeholder\">{$this->value}</textarea>
     <ul class='error error-list' id='$idError'>{$errors}
     </ul>
     ";
@@ -192,14 +192,14 @@ class InputField extends Field {
        $this->placeholder = $this->label;
     }
     if(!empty($this->label) && $this->showLabel){
-      $labell = "<label class=\"class-form-label\"  id=\"$idArray[0]\">$this->label</label>";
+      $labell = "<label class=".FIELD_LABEL_CLASS."  id=\"$idArray[0]\">$this->label</label>";
     }
       $errors = "";
       foreach($this->error_list as $error){
         $errors.="<li>{$error}</li>";
       }
 
-      $input = "<input  type='$this->type'   name='$this->name' class='class-form-control' id=\"$idArray[1]\"  style='display: block;width:100%; font-size:16px;' placeholder=\"$this->placeholder\" value=\"$this->value\"/>
+      $input = "<input  type='$this->type'   name='$this->name' class='".FIELD_CLASS."' id=\"$idArray[1]\"  style='display: block;width:100%; font-size:16px;' placeholder=\"$this->placeholder\" value=\"$this->value\"/>
         <ul class='error error-list' id='$idError'>{$errors}</ul>
       ";
     return  "<div class='form-field'>".$labell . $input."</div>";
